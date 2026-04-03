@@ -141,10 +141,14 @@ public class CerealRunner
              c.getName().equals("Cocoa Puffs")) 
             { 
                System.out.println("\nCereal: " + c.getName() + ", NetCarbs: "    
-                           + findNetCarbsPerCup (c)); 
+                           + findNetCarbsPerCup(c)); 
             } 
       }
-      
+      /* Question 4 Answer
+      findNetCarbs(c) is invalid because the method is called findNetCarbsPerCup.
+      There seem to be quite a lot of cereals I haven't heard of, like Product 19 and Basic 4.
+      There also seem to be a healthy mix of nutritional and non-nutritional cereals.
+      */
    }
 }
 
