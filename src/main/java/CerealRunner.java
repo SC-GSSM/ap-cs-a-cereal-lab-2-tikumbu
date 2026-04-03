@@ -24,6 +24,14 @@ public class CerealRunner
    public static  ArrayList<Cereal> filterCarbsPerCup(int min, int max)
    {
       //Add your solution to Question 1 here.
+      ArrayList<Cereal> ans = new ArrayList<>();
+      for (Cereal c : cereals){
+         double cpc = c.getCarbs() / c.getCups();
+         if (cpc >= min && cpc <= max){
+            ans.add(c);
+         }
+      }
+      return ans;
    }
    
    /* Question 2: Write highestPercentFiber
@@ -35,6 +43,14 @@ public class CerealRunner
    public static Cereal highestPercentFiber()
    {
       //Add your solution to Question 2 here.
+      Cereal max = cereals.get(0);
+      for (Cereal c : cereals){
+         double per = c.getFiber() / c.getCalories();
+         if (per > max.getFiber() / max.getCalories()){
+            max = c;
+         }
+      }
+      return max;
    }
   
    
@@ -47,6 +63,7 @@ public class CerealRunner
    public static double findNetCarbsPerCup(Cereal c)
    {
       //Add your solution to Question 3 here.
+      return c.getCarbs() - c.getFiber();
    }
   
 
@@ -117,6 +134,16 @@ public class CerealRunner
       Cereal testCereal = new Cereal("Golden Crisp",100,0,11,0.88);
       System.out.println("Expected results: 11.0");
       System.out.println("Actual results:   " + findNetCarbsPerCup(testCereal));
+
+      for(Cereal c: cereals) { 
+          if(c.getName().equals("All-Bran with Extra Fiber") ||   
+             c.getName().equals("Apple Jacks") ||  
+             c.getName().equals("Cocoa Puffs")) 
+            { 
+               System.out.println("\nCereal: " + c.getName() + ", NetCarbs: "    
+                           + findNetCarbsPerCup (c)); 
+            } 
+      }
       
    }
 }
