@@ -65,7 +65,7 @@ public class CerealRunner
       //Add your solution to Question 3 here.
       double scalar = 1 / c.getCups();
       double ca = c.getCarbs() * scalar;
-      double fi = c.getFiber * scalar
+      double fi = c.getFiber() * scalar;
       return ca - fi;
    }
   
